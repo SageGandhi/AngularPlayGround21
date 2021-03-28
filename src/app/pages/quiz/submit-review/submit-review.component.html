@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <nz-card nzTitle="Quiz">
+        <div nz-row>
+            <div nz-col nzSpan="2"></div>
+            <div nz-col nzSpan="20">
+                <nz-card *ngFor="let quest of questionList">
+                    <nz-card-meta nzTitle="{{quest.subject}}"
+                        id="{{quest._id}}"
+                        nzDescription="{{quest?.text}}"></nz-card-meta>
+                    <nz-radio-group [(ngModel)]="quest.answerProvided" [nzDisabled]="true">
+                        <label *ngFor="let ans of quest.options.option"
+                            nz-radio nzValue="{{ans.id}}">{{ans.content}}</label>
+                    </nz-radio-group>
+                    <p *ngIf="quest.answer.solution.text"><b>Explanation:</b>{{quest.answer.solution.text}}</p>
+                </nz-card>
+            </div>
+            <div nz-col nzSpan="2"></div>
+        </div>
+    </nz-card>
+</div>

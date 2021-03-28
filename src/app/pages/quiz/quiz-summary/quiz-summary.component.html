@@ -1,0 +1,11 @@
+<nz-collapse>
+    <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.name"
+        [nzActive]="panel.active"
+        [nzDisabled]="quizCards&&quizCards[panel.tagKey]&&quizCards[panel.tagKey].length===0">
+        <div nz-row [nzGutter]="6">
+            <div nz-col [nzSpan]="6" *ngFor="let card of quizCards[panel.tagKey]">
+                <app-tiles [quizCard]="card"></app-tiles>
+            </div>
+        </div>
+    </nz-collapse-panel>
+</nz-collapse>

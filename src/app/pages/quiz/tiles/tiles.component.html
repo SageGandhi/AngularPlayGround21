@@ -1,0 +1,17 @@
+<div style="background: #ECECEC;padding:30px;">
+    <nz-card [nzTitle]="quizCard.shortDescription" [nzActions]="[play,print]">
+        <nz-card-meta [nzTitle]="quizCard.difficultyLevel"
+            [nzAvatar]="difficulty"></nz-card-meta>
+        <p>{{quizCard.description}}</p>
+        <ng-template #difficulty>
+            <nz-tag nzMode="checkable" [nzChecked]="true">{{quizCard.difficultyLevel}}</nz-tag>
+        </ng-template>
+        <ng-template #play>
+            <i nz-icon nzType="caret-right"
+                (click)="attemptQuiz(quizCard)">Play</i>
+        </ng-template>
+        <ng-template #print>
+            <i nz-icon nzType="printer">Print</i>
+        </ng-template>
+    </nz-card>
+</div>
