@@ -1,0 +1,19 @@
+<ul class="flip-clock-number" [ngClass]="{'flip-clock-number-animated':
+    IsAnimated()}">
+    <li
+        *ngFor="let number of numbers"
+        class="flip-clock-number-digit"
+        [ngClass]="{'flip-clock-number-digit-active': IsActive(number),
+        'flip-clock-number-digit-before': IsBefore(number)}">
+        <div class="flip-clock-card">
+            <div class="flip-clock-card-up">
+                <div class="flip-clock-card-shadow"></div>
+                <div class="flip-clock-card-value flip-clock-card-value-up">{{number}}</div>
+            </div>
+            <div class="flip-clock-card-down">
+                <div class="flip-clock-card-shadow"></div>
+                <div class="flip-clock-card-value flip-clock-card-value-down">{{number}}</div>
+            </div>
+        </div>
+    </li>
+</ul>

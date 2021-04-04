@@ -15,6 +15,8 @@ import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { FormsModule } from '@angular/forms';
 import { CountDownTimerComponent } from '../pages/quiz/count-down-timer/count-down-timer.component';
 import { SubmitReviewComponent } from '../pages/quiz/submit-review/submit-review.component';
+import { FlipBlockComponent } from '../pages/flip-block/flip-block.component';
+import { FlipBlockDividerComponent } from '../pages/flip-block-divider/flip-block-divider.component';
 
 const routes: Routes = [
   {
@@ -35,6 +37,8 @@ const routes: Routes = [
     AttemptQuizComponent,
     CountDownTimerComponent,
     SubmitReviewComponent,
+    FlipBlockComponent,
+    FlipBlockDividerComponent,
   ],
   imports: [
     CommonModule,

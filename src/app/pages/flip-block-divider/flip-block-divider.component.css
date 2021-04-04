@@ -1,0 +1,25 @@
+.flip-clock-dot {
+  display: block;
+  background: #323434;
+  width: .25rem;
+  height: .25rem;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.flip-clock-dot-top {
+  top: .25rem;
+}
+
+.flip-clock-dot-bottom {
+  bottom: .25rem;
+}
+
+.flip-clock-divider {
+    float: left;
+    position: relative;
+    width: .375rem;
+    height: 1.25rem;
+  }
+  

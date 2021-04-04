@@ -1,36 +1,52 @@
 <div class="container-fluid">
-    <nz-card nzTitle="Quiz">
+    <nz-card nzTitle="Quiz" [nzExtra]="timerTemplate"
+        [nzActions]="[previousTemplateButton, nextTemplateButton,
+        resetTemplateButton]">
+        <ng-template #timerTemplate>
+            <nz-card nzTitle="Time Remaining">
+                <app-count-down-timer [quizId]="currentQuiz._id"
+                    [expiresInMinutes]="1"></app-count-down-timer>
+            </nz-card>
+        </ng-template>
+        <ng-template #previousTemplateButton>
+            <button nz-button *ngIf="currentIndex>0"
+                (click)="setCurrentQuiz(currentIndex-1)">Previous</button>
+        </ng-template>
+        <ng-template #resetTemplateButton>
+            <button nz-button (click)="reset(currentIndex)">Reset</button>
+        </ng-template>
+        <ng-template #nextTemplateButton>
+            <button nz-button *ngIf="currentIndex<(questionList.length-1)"
+                (click)="setCurrentQuiz(currentIndex+1)">Next</button>
+            <button nz-button
+                *ngIf="currentIndex==(questionList.length-1)"
+                (click)="submit()">Submit</button>
+        </ng-template>
+        <nz-collapse>
+            <nz-collapse-panel nzHeader="Navigation">
+                <!--#fa8c16-Orange/-->
+                <button nz-button  nzSize="small" nzShape="circle" style="color: #25db00;font-weight: bold;background-color: #000;"
+                    (click)="setCurrentQuiz(currIndex)"
+                    *ngFor="let question of questionList;let
+                    currIndex=index;">{{currIndex+1}}</button>
+            </nz-collapse-panel>
+        </nz-collapse>
         <div nz-row>
-            <div nz-col nzSpan="1">
-                <button nz-button nzType="primary" *ngIf="currentIndex>0" (click)="setCurrentQuiz(currentIndex-1)">Previous</button>
-            </div>
-            <div nz-col nzSpan="1"></div>
-            <div nz-col nzSpan="14">
+            <div nz-col nzSpan="3"></div>
+            <div nz-col nzSpan="18">
                 <nz-card>
-                    <nz-card-meta nzTitle="{{currentQuiz.subject}}" id="{{currentQuiz._id}}"
+                    <nz-card-meta nzTitle="{{currentQuiz.subject}}"
+                        id="{{currentQuiz._id}}"
                         nzDescription="{{currentQuiz?.text}}"></nz-card-meta>
                     <nz-radio-group [(ngModel)]="currentQuiz.answerProvided"
                         (ngModelChange)="setAnswerValue($event)">
-                        <label *ngFor="let ans of currentQuiz.options.option"
+                        <label *ngFor="let ans of
+                            currentQuiz.options.option"
                             nz-radio nzValue="{{ans.id}}">{{ans.content}}</label>
                     </nz-radio-group>
-                </nz-card>                
-            </div>
-            <div nz-col nzSpan="1"></div>
-            <div nz-col nzSpan="1">
-                <button nz-button nzType="primary" *ngIf="currentIndex<(questionList.length-1)" (click)="setCurrentQuiz(currentIndex+1)">Next</button>
-                <button nz-button nzType="primary" *ngIf="currentIndex==(questionList.length-1)" (click)="submit()">Submit</button>
-            </div>
-            <div nz-col nzSpan="6">
-                <nz-card nzTitle="Time Remaining">
-                    ToDo Flip Date Interval
                 </nz-card>
-                <nz-card nzTitle="Navigation">
-                    <button nz-button nzType="primary" nzShape="circle"
-                        (click)="setCurrentQuiz(currIndex)"
-                        *ngFor="let question of questionList;let currIndex=index;">{{currIndex+1}}</button>
-                </nz-card>                
             </div>
+            <div nz-col nzSpan="3"></div>
         </div>
     </nz-card>
 </div>

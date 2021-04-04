@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import * as questions from './all-quiz';
 @Component({
@@ -14,6 +15,7 @@ export class AttemptQuizComponent implements OnInit {
   ngOnInit() {
     for (let indexFinder = 0; indexFinder < 100; indexFinder++) {
       let foundIndex = Math.floor(Math.random() * 1000);
+      questions.questions[foundIndex]["status"]="default";
       this.questionList.push(questions.questions[foundIndex]);
       this.currentQuiz = this.questionList[0];
       this.currentIndex = 0;
@@ -24,7 +26,13 @@ export class AttemptQuizComponent implements OnInit {
     this.currentQuiz = this.questionList[index];
     this.currentIndex = index;
   }
+  reset(currIndex){
+    this.currentQuiz['answerProvided']=undefined;    
+    console.log(this.currentQuiz);
+    //Add Data To Click Stream
+  }
   setAnswerValue(event) {
+    this.questionList[this.currentIndex]["status"]="primary";
     this.currentQuiz['clickStream']=this.currentQuiz['clickStream']||[];
     this.currentQuiz['clickStream'].push({
       id:"UserEmailId",timestamp:new Date(),

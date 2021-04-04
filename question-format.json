@@ -1,0 +1,78 @@
+{
+  "questionId": "4a1fbc8d-82d6-4133-a0c7-8227af622c13",
+  "tags":["Physics","IX-Standard","Heat","Expansion"],
+  "questionType": [
+    "multiple-choice",
+    "true-false",
+    "single-choice"
+  ],
+  "question": {
+    "text": [
+      "If we have plain simple text",
+      "each item in this array will be displayed in separate line"
+    ],
+    "resources": [
+      {
+        "link": "https://scx2.b-cdn.net/gfx/news/hires/2019/3-quantumphysi.jpg",
+        "shortDescription": "Physics",
+        "longDescription": "Physics is the blah blah."
+      }
+    ],
+    "options": [
+      {
+        "text": [
+          "this is a multi line option 1",
+          "each item in this array will be displayed as separate paragraph for readablity 1"
+        ],
+        "optionId": "4e11d26d-5f2e-4fc0-846b-e04d70ca2578",
+        "explanation": [
+          "multi step explanation 1",
+          "with additinal link to external resources 1"
+        ],
+        "resources": [
+          {
+            "link": "additional link/url",
+            "shortDescription": "explained concept to understand this option",
+            "longDescription": "web scrape to show in this url"
+          }
+        ]
+      }
+    ]
+  },
+  "answer": [
+    "4e11d26d-5f2e-4fc0-846b-e04d70ca2578",
+    "f84be92f-839b-49df-9803-d9099ead55da"
+  ],
+  "status": "review",
+  "userData": {
+    "status": "review",
+    "userId":"7aa016ee-c4d4-4741-9356-2a6e9a9271a1",
+    "activities": [
+      {
+        "timestamp": "Sun Apr 04 2021 12:06:36 GMT+0100 (British Summer Time)",
+        "status": "viewed",
+        "questionId": "4a1fbc8d-82d6-4133-a0c7-8227af622c13"
+      },
+      {
+        "timestamp": "Sun Apr 04 2021 12:06:42 GMT+0100 (British Summer Time)",
+        "status": "attempted",
+        "questionId": "4a1fbc8d-82d6-4133-a0c7-8227af622c13"
+      },
+      {
+        "timestamp": "Sun Apr 04 2021 12:06:57 GMT+0100 (British Summer Time)",
+        "status": "attempted/no-attempt-made",
+        "questionId": "4a1fbc8d-82d6-4133-a0c7-8227af622c13"
+      },
+      {
+        "timestamp": "Sun Apr 04 2021 12:07:30 GMT+0100 (British Summer Time)",
+        "status": "marked-for-review",
+        "questionId": "4a1fbc8d-82d6-4133-a0c7-8227af622c13"
+      },
+      {
+        "timestamp": "Sun Apr 04 2021 12:07:30 GMT+0100 (British Summer Time)",
+        "status": "reset",
+        "questionId": "4a1fbc8d-82d6-4133-a0c7-8227af622c13"
+      }
+    ]
+  }
+}
